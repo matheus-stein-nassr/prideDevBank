@@ -11,6 +11,20 @@ public class Conta {
 	protected Cliente cliente;
 	protected String chavePix[] = new String[3]; // email, cpf, telefone
 
+	public Conta(String numeroConta, String numeroAgencia) {
+		this.numeroConta = numeroConta;
+		this.numeroAgencia = numeroAgencia;
+	}
+	
+	
+	public String getNumeroConta() {
+		return numeroConta;
+	}
+
+	public String getNumeroAgencia() {
+		return numeroAgencia;
+	}
+
 	public float getSaldo() {
 		return saldo;
 
