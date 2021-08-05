@@ -1,22 +1,26 @@
 package dominio;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Conta {
+	protected int id;
+	protected int id_cliente;
 	String numeroConta;
 	protected String numeroAgencia;
 	protected float saldo;
 	protected String tipoConta;
 	protected Cliente cliente;
-	protected String chavePix[] = new String[3]; // email, cpf, telefone
+	protected String chavePix[] = new String[3]; 
 
-	public Conta(String numeroConta, String numeroAgencia) {
+	public Conta(String numeroConta, String numeroAgencia, Cliente cliente, float saldoInicial) {
 		this.numeroConta = numeroConta;
 		this.numeroAgencia = numeroAgencia;
+		this.cliente = cliente;
+		this.saldo = saldoInicial;
 	}
 	
-	
+	public Cliente getCliente() {
+		return cliente;
+	}
+
 	public String getNumeroConta() {
 		return numeroConta;
 	}

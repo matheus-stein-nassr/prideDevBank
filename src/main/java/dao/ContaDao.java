@@ -16,7 +16,14 @@ public class ContaDao {
 	public void save(Conta conta) throws SQLException {
 		Statement comando = conexao.createStatement();
 		
-		comando.execute("insert into conta (numeroConta, numeroAgencia) values ('"+ conta.getNumeroConta() +"', '" + conta.getNumeroAgencia() + "');");
+		comando.execute(
+				"insert into conta (numeroConta,numeroAgencia,saldo,id_cliente) values("
+			    + "'" + conta.getNumeroConta() + "'" 
+			    + ",'" + conta.getNumeroAgencia() +"'"
+			    + ",'" + conta.getSaldo() + "'" 
+			    + ",'" + conta.getCliente().getId()    + "'" 
+			    		+ ");"
+			);
 	}
 
 }
